@@ -47,12 +47,9 @@ if(this.configService.configuration.cis.useCis && !this.cisService.isLoggedIn())
   const success:Promise<boolean>=this.cisService.completeAuthentication();
   success.then(result=>{
     if(!result){
-
       this.router.navigate(['/cisLogin']);
     }
   });
-
-
 }
 
 

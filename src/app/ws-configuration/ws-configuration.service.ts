@@ -40,8 +40,8 @@ export class WsConfigurationService {
     return new Promise((resolve, reject) => {
       if (response.useRemoteConfig) {
         this.setConfig(response);
-        
-        const url = this.configuration.remoteConfigHost;
+        // tslint:disable-next-line:max-line-length
+        const url = `${this.configuration.remoteConfigHost}/${this.configuration.configVersion}/${this.configuration.clientHost}/config.json`;
         console.log(`Using remote configuration: ${url}`);
         this.httpClient.get(url)
           .subscribe(
